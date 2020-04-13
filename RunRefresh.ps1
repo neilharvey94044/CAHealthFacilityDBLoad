@@ -15,7 +15,6 @@
 
 
 # Step 1 - Download the necessary data
-#TODO: edit this file
 #./Get-CAData.ps1 
 
 # Step 2 - Start the SQL Server instance in Docker
