@@ -22,15 +22,15 @@
 #./Start-SQLServer.ps1
 
 # Step 3 - Create the required tables
-#./Create-CATables.ps1
+./Create-CATables.ps1
 
 # Step 4 - Filter and load the CA Locations data
-#$locfilename = "healthcare_facility_locations.xlsx"
-#./Process-CALocations.ps1 $locfilename
+$locfilename = "healthcare_facility_locations.xlsx"
+./Process-CALocations.ps1 $locfilename
 
 # Step 5 - Filter and load the CA Services data
-#$svcfilename = "healthcare_facility_services.xlsx"
-#./Process-CAServices.ps1 $svcfilename
+$svcfilename = "healthcare_facility_services.xlsx"
+./Process-CAServices.ps1 $svcfilename
 
 # Step 6 - Filter and load the CA Beds data
 $bedsfilename = "healthcare_facility_beds.xlsx"
