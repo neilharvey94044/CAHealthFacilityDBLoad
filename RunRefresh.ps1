@@ -21,16 +21,24 @@
 #./Start-SQLServer.ps1
 
 # Step 3 - Create the required tables
-./Create-CATables.ps1
+#./Create-CATables.ps1
 
 # Step 4 - Filter and load the CA Locations data
-$locfilename = "healthcare_facility_locations.xlsx"
-./Process-CALocations.ps1 $locfilename
+#$locfilename = "healthcare_facility_locations.xlsx"
+#./Process-CALocations.ps1 $locfilename
 
 # Step 5 - Filter and load the CA Services data
-$svcfilename = "healthcare_facility_services.xlsx"
-./Process-CAServices.ps1 $svcfilename
+#$svcfilename = "healthcare_facility_services.xlsx"
+#./Process-CAServices.ps1 $svcfilename
 
 # Step 6 - Filter and load the CA Beds data
-$bedsfilename = "healthcare_facility_beds.xlsx"
-./Process-CABeds.ps1 $bedsfilename
+#$bedsfilename = "healthcare_facility_beds.xlsx"
+#./Process-CABeds.ps1 $bedsfilename
+
+# Step 7 - Filter and load the CA Covid-19 data
+#$covidfilename = "covid-19-cases.csv"
+#./Process-CACovid.ps1 $covidfilename
+
+# Step 7 - Load the Covid Tracking Project Data Into the NPPES Database
+$cvtfilename = "cvt_current.csv"
+./Process-CVTcurrent.ps1 $cvtfilename

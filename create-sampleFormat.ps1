@@ -8,5 +8,5 @@ $server = $sqlparms['server']
 $user   = $sqlparms['userid']
 $pswd   = $sqlparms['password']
 
-bcp NPPES.dbo.healthcare_facility_beds format nul -f beds_format.xml -x -c -t '|' -S $server -U $user -P $pswd 
+bcp NPPES.dbo.ca_covid format nul -f covid_format.xml -x -c -t '|' -S $server -U $user -P $pswd 
 

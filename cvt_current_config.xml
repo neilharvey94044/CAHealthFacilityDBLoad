@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<DTSConfiguration>
+  <DTSConfigurationHeading>
+    <DTSConfigurationFileInfo GeneratedBy="LAPTOP-0MI2BVMH\nharvey" GeneratedFromPackageName="Package" GeneratedFromPackageID="{D17741CC-9F39-4D22-8A1A-18A0FA5C7714}" GeneratedDate="4/20/2020 12:56:31 PM"/>
+  </DTSConfigurationHeading>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>Data Source=127.0.0.1;User ID=sa;Initial Catalog=NPPES;Provider=SQLNCLI11.1;Auto Translate=False;</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[ConnectUsingManagedIdentity]" ValueType="Boolean">
+    <ConfiguredValue>0</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[InitialCatalog]" ValueType="String">
+    <ConfiguredValue>NPPES</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[Password]" ValueType="String">
+    <ConfiguredValue>Bracket4Tree@</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[ServerName]" ValueType="String">
+    <ConfiguredValue>127.0.0.1</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[127.0.0.1.NPPES.sa].Properties[UserName]" ValueType="String">
+    <ConfiguredValue>sa</ConfiguredValue>
+  </Configuration>
+  <Configuration ConfiguredType="Property" Path="\Package.Connections[Flat File Connection Manager].Properties[ConnectionString]" ValueType="String">
+    <ConfiguredValue>D:\dev\repos\CAHealthFacilityDBLoad\cvt_current.csv</ConfiguredValue>
+  </Configuration>
+</DTSConfiguration>
