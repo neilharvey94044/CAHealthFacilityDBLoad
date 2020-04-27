@@ -1,10 +1,8 @@
+from datetime import datetime
 import pyodbc, csv, sys
 
-# Non-generic python program to load the Covid Tracking Project Current data into
-# the NPPES database.  I was very pleased to discover how easy this is using
-# python compared to bcp and SSIS.  I was especially surprised to discover how well
-# the pyodbc package handled the conversion from csv text to SQL column types; no effort
-# on my part.
+# Non-generic python program to load the Covid Tracking Project historical data into
+# the NPPES database.  
 
 inputfile = sys.argv[1]
 userid = sys.argv[2]
@@ -15,37 +13,35 @@ writecount, readcount, fldnum = 0, 0, 0
 connstr = f'Driver=ODBC Driver 17 for SQL Server;Server={server};UID={userid};PWD={password};Database=NPPES;'
 
 sqlinsert1 = """
-insert into dbo.cvt_current(
-state, 
+insert into dbo.cvt_history(
+date,
+state,
 positive,
-positiveScore,
-negativeScore,
-negativeRegularScore,
-commercialScore,
-grade,
-score,
 negative,
 pending,
 hospitalizedCurrently,
 hospitalizedCumulative,
 inIcuCurrently,
-InIcuCumulative,
+inIcuCumulative,
 onVentilatorCurrently,
 onVentilatorCumulative,
 recovered,
-lastupdateEt,
-checkTimeEt,
+hash,
+dateChecked,
 death,
 hospitalized,
 total,
 totalTestResults,
 posNeg,
 fips,
-dateModified,
-dateChecked,
-notes,
-hash)
-values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
+deathIncrease,
+hospitalizedIncrease,
+negativeIncrease,
+positiveIncrease,
+totalTestResultsIncrease
+
+)
+values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
 """
 
 
@@ -61,6 +57,8 @@ with open(inputfile, mode='r') as csvinfile:
 			print('skipping header record')
 			continue
 		else:
+			date_object = datetime.strptime(row[0], "%Y%m%d")
+			row[0] = date_object.strftime("%Y-%m-%d")
 			writecount += 1
 			cursor.execute(sqlinsert1, row)
 conn.commit()

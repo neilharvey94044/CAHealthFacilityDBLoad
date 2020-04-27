@@ -39,6 +39,14 @@
 #$covidfilename = "covid-19-cases.csv"
 #./Process-CACovid.ps1 $covidfilename
 
-# Step 7 - Load the Covid Tracking Project Data Into the NPPES Database
+
+# Step 7 - Get the Covid Tracking Project Data
+./Get-CovidTrackingProjectData.ps1
+
+# Step 8 - Load the Current Day Covid Tracking Project Data Into the NPPES Database
 $cvtfilename = "cvt_current.csv"
 ./Process-CVTcurrent.ps1 $cvtfilename
+
+# Step 9 - Load the Covid Tracking Project History Data Into the NPPES Database
+$cvthfilename = "cvt_daily.csv"
+./Process-CVThistory.ps1 $cvthfilename
